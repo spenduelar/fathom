@@ -4,9 +4,9 @@ library(janitor)
 library(readr)
 #This data was sourced from:https://ghdx.healthdata.org/record/ihme-data/gbd-2019-smoking-tobacco-use-prevalence-1990-2019
 
-#The function imports the goes into the directory and check for csv file and import it
+#The import_data function the goes into the directory, checks for csv pattern and imports it as a list and then convert it to a data frame
 import_data<-function(dir) {
-  #if no csv's file it sends a warning messsage
+  #if no csv files it sends a warning message
   if (!(length(list.files(dir, pattern = "\\.csv$")) > 0)) stop("There are no .csv files in the input dir.")
   data <- map(
     list.files(dir, pattern = "\\.csv$|\\.CSV$", full.names = TRUE,recursive = TRUE),

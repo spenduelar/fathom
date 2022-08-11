@@ -16,9 +16,9 @@ ggplot(df, aes(Male, Female), scale="globalminmax") +labs(x="Change in male rate
   theme(plot.title = element_text(size=8),
         axis.title.x = element_text(size = 6),
         axis.title.y = element_text(size = 6))+
-        #Adding labels to the dots : country labels
+        #Adding labels to the dots: country labels
         geom_text(
         label=df$location_name, 
-        nudge_x = 0.25, nudge_y = 0.25, 
+        nudge_x = 0.09, nudge_y = 0.09, #distance of label from the dot
         check_overlap = T, size=1.5
   )
